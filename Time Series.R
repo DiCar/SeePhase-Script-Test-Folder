@@ -5,11 +5,12 @@ library(ggplot2)
 
 pathPrep()
 
-seePhase <- read.csv("S:/R&D Docs/R&D Shared/3250 NASA NIOGS II/Data/PATCHCAL_RH/PATCHCAL_RH_160219T02/prc02_19_2016___05_57_41PM.csv")
+seePhase <- read.csv("C:/Users/pdicarmine/Documents/GitHub/SeePhase Script Test Folder/prc02_19_2016___05_57_41PM.csv")
 
-plotId <- paste("plot name")
+plotId <- paste("SeePhase Time Series")
 plot <- ggplot(seePhase, aes_string("X", "Ph1")) +
-  geom_line() + 
+  geom_line() +
+  geom_line(aes_string("X", "Analog"))
   ggtitle(plotId)
 print(plot)
 
